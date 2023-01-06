@@ -1,11 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#if defined(__INTEL_COMPILER)
-#include <mkl.h>
-#else
-#include <cblas.h>
-#endif
 
 void
 IJK (double *a, double *b, double *c, int n)
@@ -88,12 +82,6 @@ rdtsc (void)
     return (d << 32) | a;
 }
 
-/* void CBLAS(double* a, double* b, double* c, int n) */
-/* { */
-/*   cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, n, n, n, 1.0, a, n,
- * b, n, 0.0, c, n); */
-/* } */
-
 int
 main (int argc, char **argv)
 {
@@ -139,7 +127,6 @@ main (int argc, char **argv)
     end = (double)rdtsc ();
     elapsedunroll = end - start;
     printf ("UNROLL:%f\n", elapsedunroll);
-    /* CBLAS(a,b,c,n); */
 
     free (a);
     free (b);
