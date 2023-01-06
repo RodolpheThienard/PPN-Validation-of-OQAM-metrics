@@ -1,15 +1,17 @@
-# x87 instructions checks
+# Test du jeu d'instructions x87
 
-This test suit tests verifies that MAQAO sees the x87 float instructions,
-that are less efficient than SSE or AVX.
+Cette batterie de tests permet de vérifier que MAQAO identifie correctement
+les instructions flottantes du jeu x87, qui est moins performant que celles
+issues des jeux d'instructions SSE ou AVX.
 
-The test suits is a collections of functions that uses one x87 instruction
-with inline assembly code.
+Il s'agit d'une collection de fonctions qui sont implémentées avec des
+instructions x87.
 
-For each binary CQA is called and its output is piped to grep, that will
-let us check if the string x87 is present.
+La sortie CQA pour chaque binaire est transmise à grep, qui va vérifier
+que le message notifiant de la présence d'instructions x87 est bien
+présent.
 
-To run the test use:
+Pour lancer le test, utiliser la commande suivante:
 
 ```
 $ ./run_tests.sh
