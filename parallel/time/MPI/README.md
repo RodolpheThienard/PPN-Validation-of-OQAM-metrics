@@ -13,7 +13,7 @@ Pour pouvoir utiliser la version Intel de `mpifort`, il faut penser à utiliser 
 Des fichiers de configuration en lua sont présents dans ce dossier pour permettre de lancer plusieurs runs avec scalabilité sur les binaires.
 
 ```bash
-$ maqao oneview -R1 -WS -c=multi-mpi-[].lua
+$ maqao oneview -R1 -WS -c=scalability-[].lua
 ```
 
 ### `reduc_mpi`
@@ -22,7 +22,7 @@ $ maqao oneview -R1 -WS -c=multi-mpi-[].lua
 USAGE: mpirun -np <nombre_processus> ./reduc_mpi [<taille_vecteur>] <nombre_itérations>
 ```
 
-Ce programme calcule une réduction d'un vecteur dont la taille peut être spécifié en arguments un nombre donné de fois.
+Ce programme calcule une réduction d'un vecteur dont la taille peut être spécifié en argument un nombre donné de fois.
 La taille par défaut est 4096 flottants double précision (32 ko).
 Il affiche sur la sortie standard le résultat.
 
